@@ -1,6 +1,10 @@
 const express = require("express");
+const session = require("express-session");
 
 const path = require("path");
+
+const routes = require("./controllers");
+
 
 require("dotenv").config();
 
@@ -9,11 +13,26 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
+//import sequelize from config
+const sequelize = require("./config/connection");
+const sequelizeStore = require("connect-session-sequelize")(session.Store);
+
+const sess = {
+  secret: process.env.MY_SECRET,
+  cookie: {},
+  resave: false,
+  saveUnitialized: true,
+  store: new sequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
 
 // Define middleware
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
+app.use(routes);
 
 //serves static assets (i.e. heroku)
 if (process.env.NODE_ENV === "production") {
