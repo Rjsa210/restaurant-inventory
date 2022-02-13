@@ -1,8 +1,8 @@
 const {DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/connection");
-const { Vendor } = require(".");
 
-class Product extends Model { }
+
+class Product extends Model {}
 
 Product.init({
   //Product attributes defined here ID, Name, Price, Category, Pack size, count size, storage location, Storage, vendor, item number, locations
@@ -22,7 +22,7 @@ Product.init({
     defaultValue: "uncategorized",
 
   },
-  Pack_size: {
+  pack_size: {
     type: DataTypes.STRING,
 
   },
@@ -33,13 +33,13 @@ Product.init({
   storage_location: {
     type: DataTypes.STRING,
   },
-  vendor: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "Vendor",
-      key: "id"
-    }
-  },
+  // vendor: {
+  //   type: DataTypes.INTEGER,
+  //   references: {
+  //     model: "Vendor",
+  //     key: "id"
+  //   }
+  // },
   locations: {
     type: DataTypes.INTEGER,
     references: {

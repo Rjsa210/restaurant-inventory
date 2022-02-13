@@ -3,7 +3,7 @@ const session = require("express-session");
 
 const path = require("path");
 
-const routes = require("./controllers");
+const routes = require("./routes");
 
 
 require("dotenv").config();
@@ -21,7 +21,7 @@ const sess = {
   secret: process.env.MY_SECRET,
   cookie: {},
   resave: false,
-  saveUnitialized: true,
+  saveUninitialized: true,
   store: new sequelizeStore({
     db: sequelize
   })
@@ -30,7 +30,7 @@ const sess = {
 app.use(session(sess));
 
 // Define middleware
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(routes);
 
@@ -43,6 +43,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`Hello World 🌎 ==> API server now on port ${PORT}!`);
+// app.listen(PORT, () => {
+//   console.log(`Hello World 🌎 ==> API server now on port ${PORT}!`);
+// });
+
+sequelize.sync({force: false}).then(() => {
+  app.listen(PORT, () => console.log(`Hello World 🌎 ==> API server now on port ${PORT}!`));
 });
