@@ -40,13 +40,13 @@ Product.init({
   //     key: "id"
   //   }
   // },
-  locations: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'Location',
-      key: "id"
-    }
-  }
+  // locations: {
+  //   type: DataTypes.INTEGER,
+  //   references: {
+  //     model: 'Location',
+  //     key: "id"
+  //   }
+  // }
   // unique: {
   //   type: DataTypes.UUIDV4,
   //   allowNull: false,
