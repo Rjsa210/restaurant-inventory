@@ -30,6 +30,16 @@ Product.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
+  pack_price: {
+    type: DataTypes.DECIMAL(7,2),
+    allowNull: false,
+    defaultValue: 0.00
+  },
+  count_price: {
+    type: DataTypes.DECIMAL(7,2),
+    allowNull: false,
+    defaultValue: 0.00
+  },
   storage_location: {
     type: DataTypes.STRING,
   },

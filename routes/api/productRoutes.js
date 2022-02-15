@@ -29,8 +29,8 @@ const { Location, Product, } = require("../../models");
 // })
 router.get("/", (req, res) => {
   Product.findAll()
-  .then((data) => res.send(data))
-  .catch((err) => res.send(err))
+  .then((data) => res.status(200).json(data))
+  .catch((err) => res.status(404).send(err))
 })
 
 router.post("/", (req, res) => {
@@ -39,15 +39,12 @@ router.post("/", (req, res) => {
     category: req.body.category,
     pack_size: req.body.pack_size,
     count_size: req.body.count_size,
+    pack_price: req.body.pack_price,
+    count_price: req.body.count_price,
     storage_location: req.body.storage_location
-
   })
-  .then((data) => res.status(200).send(data))
+  .then((data) => res.status(201).json(data))
   .catch((err) => res.status(500).send(err))
 })
-
-// router.post("/", (req, res) => {
-//   console.log(req.body)
-// })
 
 module.exports = router; 

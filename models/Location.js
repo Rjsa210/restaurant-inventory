@@ -23,7 +23,8 @@ Location.init({
   //   }
   // }
 
-},{
+},
+{
   sequelize,
   timestamps: false
 });

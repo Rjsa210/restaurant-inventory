@@ -9,6 +9,8 @@ const productSeeds = [
     category: "Produce",
     pack_size: "CS/20#",
     count_size: "CS",
+    pack_price: 24.66,
+    count_price: 24.66,
     storage_location: "Cooler"
   },
   {
@@ -16,6 +18,8 @@ const productSeeds = [
     category: "Protein Beef",
     pack_size: "CS 70#",
     count_size: "#",
+    pack_price: 1400.00,
+    count_price: 20.00,
     storage_location: "Cooler"
   },
   {
@@ -23,6 +27,8 @@ const productSeeds = [
     category: "Produce, Cellar",
     pack_size: "CS/50#",
     count_size: "CS",
+    pack_price: 17.00,
+    count_price: 17.00,
     storage_location: "Dry"
   },
   {
@@ -30,6 +36,8 @@ const productSeeds = [
     category: "Dairy",
     pack_size: "CS/ 4 Gal",
     count_size: "Gal",
+    pack_price: 20.00,
+    count_price: 5.00,
     storage_location: "Cooler"
   },
   {
@@ -37,6 +45,8 @@ const productSeeds = [
     category: "Produce",
     pack_size: "CS 5/2# bag",
     count_size: "2# Bag",
+    pack_price: 100.00,
+    count_price: 20.00,
     storage_location: "Freezer"
   },
   {
@@ -44,6 +54,8 @@ const productSeeds = [
     category: "Dairy",
     pack_size: "CS/ 15 dz",
     count_size: "CS",
+    pack_price: 19.00,
+    count_price: 19.00,
     storage_location: "Cooler"
   },
 ]

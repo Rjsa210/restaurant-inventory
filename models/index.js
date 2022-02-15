@@ -1,5 +1,5 @@
 
-const db = require("../config/connection")
+
 const Product = require("./Product");
 const Location = require("./Location");
 // const Vendor = require("./Vendor");
@@ -7,11 +7,11 @@ const Location = require("./Location");
 
 Product.hasMany(Location);
 
-Location.belongsTo(Product);
+// Location.belongsTo(Product);
 
 // Vendor.hasMany(Product);
 
 
 
 
-module.exports = { db, Product, Location };
+module.exports = { Product, Location };
