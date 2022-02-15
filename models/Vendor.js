@@ -14,13 +14,13 @@ Vendor.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Products: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: "Vendor",
-      key: "id"
-    }
-  }
+  // Products: {
+  //   type: DataTypes.INTEGER,
+  //   references: {
+  //     model: "Vendor",
+  //     key: "id"
+  //   }
+  // }
 
 },{
   sequelize,

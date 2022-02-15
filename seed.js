@@ -1,7 +1,7 @@
 
 const sequelize = require("sequelize");
 const router = require("express").Router();
-const { db, Location, Product } = require("./models/index");
+const { Vendor, Location, Product } = require("./models/index");
 
 const productSeeds = [
   {
@@ -83,17 +83,35 @@ const locationSeeds = [
 ]
 
 
-function seedLocations() {
-  Location.bulkCreate(locationSeeds)
-    .then(console.log(`${locationSeeds.length} locations seeded successfully.`))
-    .then(() => { process.exit() })
+const vendorSeeds = [
+  {
+    vendor_name: "US Foods"
+  },
+  {
+    vendor_name: "Vesta Foodservice"
+  },
+  {
+    vendor_name: "Sierra Meats"
+  }
 
-}
+]
+
 
 function seedProducts() {
   Product.bulkCreate(productSeeds)
-    .then(console.log(`${productSeeds.length} products seeded successfully.`))
-    .then(seedLocations)
+  .then(console.log(`${productSeeds.length} products seeded successfully.`))
+  .then(seedLocations)
 }
 
+function seedLocations() {
+  Location.bulkCreate(locationSeeds)
+    .then(console.log(`${locationSeeds.length} locations seeded successfully.`))
+    .then(seedVendors)
+}
+
+function seedVendors() {
+  Vendor.bulkCreate(vendorSeeds)
+  .then(console.log(`${vendorSeeds.length} vendors seeded successfully.`))
+  .then(() => { process.exit() })
+}
 seedProducts();

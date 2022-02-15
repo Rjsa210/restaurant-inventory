@@ -47,6 +47,6 @@ app.get("*", (req, res) => {
 //   console.log(`Hello World 🌎 ==> API server now on port ${PORT}!`);
 // });
 
-sequelize.sync({force: false }).then(() => {
+sequelize.sync({force: false}).then(() => {
   app.listen(PORT, () => console.log(`Hello World 🌎 ==> DB Synced... API server now on port ${PORT}!`));
 });
