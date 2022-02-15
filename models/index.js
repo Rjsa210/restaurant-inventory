@@ -1,5 +1,5 @@
 
-
+const db = require("../config/connection")
 const Product = require("./Product");
 const Location = require("./Location");
 // const Vendor = require("./Vendor");
@@ -14,4 +14,4 @@ Location.belongsTo(Product);
 
 
 
-module.exports = { Product, Location };
+module.exports = { db, Product, Location };
