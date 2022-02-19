@@ -34,6 +34,7 @@ router.get("/", (req, res) => {
 })
 
 router.post("/", (req, res) => {
+  console.log(req.body)
   Product.create({
     product_name: req.body.product_name,
     category: req.body.category,
@@ -44,7 +45,8 @@ router.post("/", (req, res) => {
     storage_location: req.body.storage_location
   })
   .then((data) => res.status(201).json(data))
-  .catch((err) => res.status(500).send(err))
+  .catch((err) => res.status(500).json(err))
+  .catch((err) => console.log(err))
 })
 
 module.exports = router; 
