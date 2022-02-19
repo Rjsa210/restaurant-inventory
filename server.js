@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-
+//this is a cool comment for a push..
 //import sequelize from config
 const sequelize = require("./config/connection");
 const sequelizeStore = require("connect-session-sequelize")(session.Store);
